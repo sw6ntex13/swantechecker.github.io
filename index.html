@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="shortcut icon" href="./images/logo.png">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo" title="SW6NTEX CHECK">
+            <img src="./images/logo.png" alt="">
+            <h2>SW6NTEX<span class="danger">CHECK</span></h2>
+        </div>
+        <div class="navbar">
+            <a href="index.html" class="active">
+                <span class="material-icons-sharp">home</span>
+                <h3>ANA SAYFA</h3>
+            </a>
+            <a href="timetable.html" onclick="timeTableAll()">
+                <span class="material-icons-sharp">today</span>
+                <h3>ÜCRETSİZ SORGULAR</h3>
+            </a> 
+            <a href="exam.html">
+                <span class="material-icons-sharp">grid_view</span>
+                <h3>AİLE VE OKULSORGU</h3>
+            </a>
+            <a href="password.html">
+                <span class="material-icons-sharp">password</span>
+                <h3>ŞİFRE DEĞİŞTİR</h3>
+            </a>
+            <a href="#">
+                <span class="material-icons-sharp" onclick="">logout</span>
+                <h3>ÇIKIŞ YAP</h3>
+            </a>
+        </div>
+        <div id="profile-btn">
+            <span class="material-icons-sharp">person</span>
+        </div>
+        <div class="theme-toggler">
+            <span class="material-icons-sharp active">light_mode</span>
+            <span class="material-icons-sharp">dark_mode</span>
+        </div>
+        
+    </header>
+    <div class="container">
+        <aside>
+            <div class="profile">
+                <div class="top">
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.jpg" alt="">
+                    </div>
+                    <div class="info">
+                        <p>HOŞGELDİN, <b>SW6NTEX</b> </p>
+                        <small class="text-muted">12102030</small>
+                    </div>
+                </div>
+                <div class="about">
+                    <h5>RÜTBE</h5>
+                    <p>KURUCU,ADMİN</p>
+                    <h5>KATILIM TARİHİ</h5>
+                    <p>12-23-2022</p>
+                    <h5>YAPILAN SORGU SAYISI</h5>
+                    <p>2</p>
+                    <h5>LİYAKAT</h5>
+                    <p>100</p>
+                    <h5>İP ADRESİ</h5>
+                    <p>244.138.28.245</p>
+                </div>
+            </div>
+        </aside>
+
+        <main>
+            <h1>SW6NTEX CHECKER</h1>
+            <div class="subjects">
+                <div class="eg">
+                    <span class="material-icons-sharp">architecture</span>
+                    <h3>SORGU HIZI</h3>
+                    <h2></h2>
+                    <div class="progress">
+                        <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                        <div class="number"><p>100%</p></div>
+                    </div>
+                    <small class="text-muted">SW6NTEX</small>
+                </div>
+                <div class="mth">
+                    <span class="material-icons-sharp">functions</span>
+                    <h3>ANONİMLİĞİNİZ</h3>
+                    <h2></h2>
+                    <div class="progress">
+                        <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                        <div class="number"><p>93%</p></div>
+                    </div>
+                    <small class="text-muted">SW6NTEX</small>
+                </div>
+                <div class="cs">
+                    <span class="material-icons-sharp">computer</span>
+                    <h3>FURKAN GÜVENCESİ</h3>
+                    <h2></h2>
+                    <div class="progress">
+                        <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                        <div class="number"><p>81%</p></div>
+                    </div>
+                    <small class="text-muted">SW6NTEX</small>
+                </div>
+                <div class="cg">
+                    <span class="material-icons-sharp">dns</span>
+                    <h3>GÜVENLİ VERİTABANI</h3>
+                    <h2>24/25</h2>
+                    <div class="progress">
+                        <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                        <div class="number"><p>96%</p></div>
+                    </div>
+                    <small class="text-muted">HİÇ BİR SİSTEM VERİ TABANIMIZI ÇEKEMEZ.</small>
+                </div>
+                <div class="net">
+                    <span class="material-icons-sharp">router</span>
+                    <h3>NETWORK GÜVENLİĞİ</h3>
+                    <h2>25/27</h2>
+                    <div class="progress">
+                        <svg><circle cx="38" cy="38" r="36"></circle></svg>
+                        <div class="number"><p>92%</p></div>
+                    </div>
+                    <small class="text-muted">SW6NTEX</small>
+                </div>
+            </div>
+
+            <div class="timetable" id="timetable">
+                <div>
+                    <span id="prevDay">&lt;</span>
+                    <h2>Today's Timetable</h2>
+                    <span id="nextDay">&gt;</span>
+                </div>
+                <span class="closeBtn" onclick="timeTableAll()">X</span>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Room No.</th>
+                            <th>Subject</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </main>
+
+        <div class="right">
+            <div class="announcements">
+                <h2>UYARI VE BİLGİLER</h2>
+                <div class="updates">
+                    <div class="message">
+                        <p> <b>BAN SİSTEMİ</b> ÜCRETSİZ SORGULARDA 15'DEN FAZLA SORGU BAN SEBEBİDİR.VE ÜNLÜ KİŞİLERE YAPILAN SORGULARDA İP BAN YER</p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="message">
+                        <p> <b>FİYATLANDIRMA</b>FİYAT KATEGORİSİ 2'YE AYRILIR.BUNLAR STANDART VE PREMİUMDUR STANDART ÜYELİK AYLIK 100,PREMİUM ÜYELİK 250 ₺'DİR</p>
+                        <small class="text-muted"></small>
+                    </div>
+                    <div class="SW6NTEX CHECK NEDİR?">
+                        <p> <b>SW6NTEX CHECKER NEDİR?</b> CHECKERİMİZ İLE İSTEDİĞİNİZ TÜRK VATANDAŞLARININ KİMLİK,SINAV VE HASTANE BİLGİLERİNE ULAŞABİLİRSİNİZ.</p>
+                        <small class="text-muted"></small>
+                    </div>
+                </div>
+            </div>
+
+            <div class="leaves">
+                <h2>SON YAPILAN SORGULAR</h2>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-2.jpeg" alt=""></div>
+                    <div class="info">
+                        <h3>AHMET KAYA</h3>
+                        <small class="text-muted">BİLGİLERİ GÖRMEK İÇİN TIKLA...</small>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-3.jpg" alt=""></div>
+                    <div class="info">
+                        <h3>FATİH TERİM</h3>
+                        <small class="text-muted">BİLGİLERİ GÖRMEK İÇİN TIKLA...</small>
+                    </div>
+                </div>
+                <div class="teacher">
+                    <div class="profile-photo"><img src="./images/profile-4.jpg" alt=""></div>
+                    <div class="info">
+                        <h3>HİLAL AKDEMİR</h3>
+                        <small class="text-muted">BİLGİLERİ GÖRMEK İÇİN TIKLA...</small>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="timeTable.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
